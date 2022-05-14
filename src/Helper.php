@@ -1,8 +1,10 @@
 <?php
 
+namespace src;
+
 class Helper
 {
-    public static function prettyPrint($data)
+    public static function prettyPrint($data): void
     {
         echo '<pre>';
         var_dump($data);

@@ -1,5 +1,7 @@
 <?php
 
+namespace src;
+
 class Database
 {
     private DbConfig $dbConfig;
@@ -7,6 +9,10 @@ class Database
     public function __construct()
     {
         $this->dbConfig = new DbConfig();
+    }
+
+    public function getAllProducts(): void
+    {
     }
 
     public function connect(): PDO

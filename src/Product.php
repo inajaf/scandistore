@@ -1,11 +1,11 @@
 <?php
 
+
 abstract class Product
 {
     protected string $sku;
     protected string $name;
     protected int $price;
-    private array $attributes;
 
     public function __construct(string $sku, string $name, int $price)
     {
@@ -14,9 +14,14 @@ abstract class Product
         $this->price = $price;
     }
 
-    public function showProduct(object $product)
+    public function showProduct(object $product): void
     {
         echo $product;
+    }
+
+    public function addProduct()
+    {
+        echo "Add product functionality";
     }
 
     public function getAllProducts(): array
