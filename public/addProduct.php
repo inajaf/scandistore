@@ -3,7 +3,6 @@
 require_once "../src/helpers/autoload.php";
 
 use src\Product;
-use src\Helper;
 
 include('template/layouts/partials/_head.php');
 
@@ -27,7 +26,7 @@ include('template/layouts/partials/_head.php');
                 </div>
             </div>
         </nav>
-        <hr class="mb-2" />
+        <hr class="mb-2"/>
         <div class="row p-4">
             <div class="form-group row mb-3">
                 <label for="sku" class="col-2 col-form-label">SKU</label>
@@ -60,33 +59,42 @@ include('template/layouts/partials/_head.php');
             <div class="form-group row mb-3" id="dvdParams">
                 <label for="size" class="col-2 col-form-label">Size (MB)</label>
                 <div class="col-2">
-                    <input type="text" name="size" class="form-control" id="size">
+                    <input type="number" name="size" class="form-control" id="size">
+                </div>
+                <div class="pt-5">
+                    <strong>Please, provide disc space in MB</strong>
                 </div>
             </div>
             <div class="form-group row mb-3" id="bookParams">
                 <label for="weight" class="col-2 col-form-label">Weight (KG)</label>
                 <div class="col-2">
-                    <input type="text" name="weight" class="form-control" id="weight">
+                    <input type="number" name="weight" class="form-control" id="weight">
+                </div>
+                <div class="pt-5">
+                    <strong>Please, provide weight in Kg.</strong>
                 </div>
             </div>
             <div class="form-group row mb-3" id="furnitureParams">
                 <div class="row mb-3">
                     <label for="height" class="col-2 col-form-label">Height (CM)</label>
                     <div class="col-2">
-                        <input type="text" name="height" class="form-control" id="height">
+                        <input type="number" name="height" class="form-control" id="height">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="width" class="col-2 col-form-label">Width (CM)</label>
                     <div class="col-2">
-                        <input type="text" name="width" class="form-control" id="width">
+                        <input type="number" name="width" class="form-control" id="width">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="length" class="col-2 col-form-label">Length (CM)</label>
                     <div class="col-2">
-                        <input type="text" name="length" class="form-control" id="length">
+                        <input type="number" name="length" class="form-control" id="length">
                     </div>
+                </div>
+                <div class="pt-5">
+                    <strong>Please, provide height, weight, length in CM.</strong>
                 </div>
             </div>
         </div>
