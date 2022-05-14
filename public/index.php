@@ -2,7 +2,9 @@
 
 require_once "../src/helpers/autoload.php";
 
-include "template/layouts/main.html";
+include "template/layouts/main.php";
+
+
 
 //$database = new Database();
 //
