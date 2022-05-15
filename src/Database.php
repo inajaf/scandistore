@@ -17,12 +17,10 @@ class Database
 
     public function create(array $data): void
     {
-        //TODO: insert keys and values with PDO
-        $keys = array_keys($data);
-        $values = array_values($data);
-        $sql = "INSERT INTO product (sku, name, price, size, weight, height, width, length) VALUES (:values)";
+        $sql = "INSERT INTO product (sku, name, price, size, weight, height, width, length) 
+            VALUES (?,?,?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($data);
+        $stmt->execute(array_values($data));
     }
 
     public function connect(): PDO

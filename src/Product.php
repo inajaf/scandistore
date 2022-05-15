@@ -19,6 +19,7 @@ class Product extends MainProduct
     {
         $validatedAttributes = $this->validateArray($postAttributes);
         $this->database->create($validatedAttributes);
+
     }
 
     private function validateArray(array $postAttributes): array
@@ -28,7 +29,7 @@ class Product extends MainProduct
         foreach ($postAttributes as $key => $value) {
             if (in_array($key, $this->validAttributes, true)) {
                 $data [] = [
-                    $key => $value
+                    $key => $value ?: null
                 ];
             }
         }
