@@ -2,12 +2,16 @@
 
 require_once "../src/helpers/autoload.php";
 
-use src\Product;
+$product = new Product();
+
+if (!empty($_POST)) {
+    $product->addProduct($_POST);
+}
 
 include('template/layouts/partials/_head.php');
 
 ?>
-    <form method="post" id="product_form">
+    <form method="POST" id="product_form">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pb-3 mb-4 p-2">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,7 +41,7 @@ include('template/layouts/partials/_head.php');
             <div class="form-group row mb-3">
                 <label for="name" class="col-2 col-form-label">Name</label>
                 <div class="col-3">
-                    <input type="text" name="price" class="form-control" id="price">
+                    <input type="text" name="name" class="form-control" id="name">
                 </div>
             </div>
             <div class="form-group row mb-3">

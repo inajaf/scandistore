@@ -1,7 +1,5 @@
 <?php
 
-namespace src;
-
 class Helper
 {
     public static function prettyPrint($data): void

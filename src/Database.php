@@ -1,18 +1,28 @@
 <?php
 
-namespace src;
-
 class Database
 {
     private DbConfig $dbConfig;
+    protected PDO $pdo;
 
     public function __construct()
     {
         $this->dbConfig = new DbConfig();
+        $this->pdo = $this->connect();
     }
 
     public function getAllProducts(): void
     {
+    }
+
+    public function create(array $data): void
+    {
+        //TODO: insert keys and values with PDO
+        $keys = array_keys($data);
+        $values = array_values($data);
+        $sql = "INSERT INTO product (sku, name, price, size, weight, height, width, length) VALUES (:values)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($data);
     }
 
     public function connect(): PDO
