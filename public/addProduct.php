@@ -26,28 +26,29 @@ include('template/layouts/partials/_head.php');
                 </ul>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <input class="btn btn-success me-md-2" type="submit" value="Save" name="save"/>
-                    <input class="btn btn-warning" type="submit" value="Cancel" name="cancel"/>
+                    <button class="btn btn-warning" onclick="window.location='/'">Cancel</button>
                 </div>
             </div>
         </nav>
         <hr class="mb-2"/>
         <div class="row p-4">
+            <div class="alert alert-danger" role="alert" id="message" style="display: none;"></div>
             <div class="form-group row mb-3">
-                <label for="sku" class="col-2 col-form-label">SKU</label>
+                <label for="sku" class="col-2 col-form-label required">SKU</label>
                 <div class="col-3">
-                    <input type="text" name="sku" class="form-control" id="sku">
+                    <input type="text" name="sku" class="form-control" id="sku" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
-                <label for="name" class="col-2 col-form-label">Name</label>
+                <label for="name" class="col-2 col-form-label required">Name</label>
                 <div class="col-3">
-                    <input type="text" name="name" class="form-control" id="name">
+                    <input type="text" name="name" class="form-control" id="name" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
-                <label for="price" class="col-2 col-form-label">Price ($)</label>
+                <label for="price" class="col-2 col-form-label required">Price ($)</label>
                 <div class="col-3">
-                    <input type="text" name="price" class="form-control" id="price">
+                    <input type="text" name="price" class="form-control" id="price" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
@@ -60,47 +61,7 @@ include('template/layouts/partials/_head.php');
                     </select>
                 </div>
             </div>
-            <div class="form-group row mb-3" id="dvdParams">
-                <label for="size" class="col-2 col-form-label">Size (MB)</label>
-                <div class="col-2">
-                    <input type="number" name="size" class="form-control" id="size">
-                </div>
-                <div class="pt-5">
-                    <strong>Please, provide disc space in MB</strong>
-                </div>
-            </div>
-            <div class="form-group row mb-3" id="bookParams">
-                <label for="weight" class="col-2 col-form-label">Weight (KG)</label>
-                <div class="col-2">
-                    <input type="number" name="weight" class="form-control" id="weight">
-                </div>
-                <div class="pt-5">
-                    <strong>Please, provide weight in Kg.</strong>
-                </div>
-            </div>
-            <div class="form-group row mb-3" id="furnitureParams">
-                <div class="row mb-3">
-                    <label for="height" class="col-2 col-form-label">Height (CM)</label>
-                    <div class="col-2">
-                        <input type="number" name="height" class="form-control" id="height">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="width" class="col-2 col-form-label">Width (CM)</label>
-                    <div class="col-2">
-                        <input type="number" name="width" class="form-control" id="width">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="length" class="col-2 col-form-label">Length (CM)</label>
-                    <div class="col-2">
-                        <input type="number" name="length" class="form-control" id="length">
-                    </div>
-                </div>
-                <div class="pt-5">
-                    <strong>Please, provide height, weight, length in CM.</strong>
-                </div>
-            </div>
+            <div class="form-group row mb-3" id="parameters"></div>
         </div>
     </form>
 

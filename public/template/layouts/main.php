@@ -16,7 +16,7 @@
                     <a href="/addProduct.php">
                         <button class="btn btn-success me-md-2" type="button">ADD</button>
                     </a>
-                    <button class="btn btn-warning" type="button">MASS DELETE</button>
+                    <button class="btn btn-warning" type="button" id="delete-product-btn">MASS DELETE</button>
                 </div>
             </div>
         </div>
