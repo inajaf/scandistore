@@ -51,15 +51,15 @@ $("#productType").change(function () {
 });
 $("#productType").trigger("change");
 
-$('form').submit(function(e) {
-    e.preventDefault();
-
-    let inputs = {};
-    $(this).find(':input').each(function() {
-        inputs[$(this).attr("name")] = $(this).val();
-    });
-
-    $.post(inputs, function(data, status) {
-        $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
-    });
-});
+// $('form').submit(function(e) {
+//     e.preventDefault();
+//
+//     let inputs = {};
+//     $(this).find(':input').each(function() {
+//         inputs[$(this).attr("name")] = $(this).val();
+//     });
+//
+//     $.post(inputs, function(data, status) {
+//         $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
+//     });
+// });

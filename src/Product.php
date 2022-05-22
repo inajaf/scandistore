@@ -1,39 +1,20 @@
 <?php
 
 
-class Product extends MainProduct
+abstract class MainProduct
 {
-    protected Database $database;
+    protected string $sku;
+    protected string $name;
+    protected string $type;
+    protected array $attributes;
+    protected array $products;
 
-    public function __construct()
+    public function addProduct(array $postAttributes) {}
+
+
+    public function getProducts(): array
     {
-        $this->database = new Database();
+        return $this->products;
     }
 
-    private array $validAttributes = [
-        'sku', 'name', 'price', 'size', 'weight', 'height', 'width', 'length'
-    ];
-
-
-    public function addProduct(array $postAttributes): void
-    {
-        $validatedAttributes = $this->validateArray($postAttributes);
-        $this->database->create($validatedAttributes);
-
-    }
-
-    private function validateArray(array $postAttributes): array
-    {
-        $data = [];
-
-        foreach ($postAttributes as $key => $value) {
-            if (in_array($key, $this->validAttributes, true)) {
-                $data [] = [
-                    $key => $value ?: null
-                ];
-            }
-        }
-
-        return array_merge(...$data);
-    }
 }

@@ -2,10 +2,11 @@
 
 require_once "../src/helpers/autoload.php";
 
-$product = new Product();
+if (isset($_POST['submit']) && !empty($_POST)) {
+    $productType = $_POST['productType'];
 
-if (!empty($_POST)) {
-    $product->addProduct($_POST);
+    $product = new (ucfirst($productType))($_POST);
+    $product->addProduct();
 }
 
 include('template/layouts/partials/_head.php');
@@ -25,7 +26,7 @@ include('template/layouts/partials/_head.php');
                     </li>
                 </ul>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <input class="btn btn-success me-md-2" type="submit" value="Save" name="save"/>
+                    <input class="btn btn-success me-md-2" type="submit" value="Save" name="submit">
                     <button class="btn btn-warning" onclick="window.location='/'">Cancel</button>
                 </div>
             </div>
@@ -48,13 +49,13 @@ include('template/layouts/partials/_head.php');
             <div class="form-group row mb-3">
                 <label for="price" class="col-2 col-form-label required">Price ($)</label>
                 <div class="col-3">
-                    <input type="text" name="price" class="form-control" id="price" required>
+                    <input type="number" name="price" class="form-control" id="price" required>
                 </div>
             </div>
             <div class="form-group row mb-3">
                 <label for="typeSwitcher" class="col-2 col-form-label">Type Switcher</label>
                 <div class="col-3">
-                    <select class="form-select" id="productType">
+                    <select class="form-select" id="productType" name="productType">
                         <option value="dvd" id="dvd">DVD-disc</option>
                         <option value="book" id="book">Book</option>
                         <option value="furniture" id="furniture">Furniture</option>
